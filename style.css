@@ -1,0 +1,496 @@
+/* RenewClinic audience report deck, adapted from html-ppt weekly-report structure. */
+.tpl-audience-report {
+  --bg: #fafbfc;
+  --bg-soft: #f3f5f9;
+  --surface: #ffffff;
+  --surface-2: #f3f5f9;
+  --border: rgba(22, 30, 55, .10);
+  --border-strong: rgba(22, 30, 55, .22);
+  --text-1: #161e37;
+  --text-2: #50586b;
+  --text-3: #8b92a5;
+  --accent: #2e63eb;
+  --accent-2: #0ea5b5;
+  --accent-3: #f59e0b;
+  --good: #10b981;
+  --warn: #f59e0b;
+  --bad: #ef4444;
+  --grad: linear-gradient(120deg, var(--accent), var(--accent-2));
+  --radius: 8px;
+  --radius-sm: 8px;
+  --radius-lg: 8px;
+  --shadow: 0 6px 20px rgba(22, 30, 55, .06), 0 1px 3px rgba(22, 30, 55, .04);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+.tpl-audience-report .slide {
+  padding: 62px 82px;
+  background:
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 28%),
+    linear-gradient(180deg, var(--bg), var(--bg-soft));
+  letter-spacing: 0;
+}
+
+.tpl-audience-report .h1,
+.tpl-audience-report .h2,
+.tpl-audience-report h3,
+.tpl-audience-report h4,
+.tpl-audience-report p,
+.tpl-audience-report div {
+  letter-spacing: 0;
+}
+
+.tpl-audience-report .h1 {
+  font-size: 64px;
+  line-height: 1.08;
+  font-weight: 800;
+  max-width: 980px;
+}
+
+.tpl-audience-report .h2 {
+  font-size: 44px;
+  line-height: 1.16;
+  font-weight: 760;
+  max-width: 1040px;
+}
+
+.tpl-audience-report .kicker {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.tpl-audience-report .lede {
+  color: var(--text-2);
+  max-width: 820px;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.cover-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 58px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 850;
+  color: var(--text-1);
+}
+
+.report-chip,
+.cover-grid div,
+.priority-box,
+.week-chip {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.report-chip {
+  padding: 8px 16px;
+  color: var(--text-2);
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+
+.cover-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 980px;
+}
+
+.cover-grid div {
+  padding: 18px 20px;
+}
+
+.cover-grid span,
+.thesis-card span,
+.quote-card span,
+.signal-list span,
+.roadmap-step span,
+.playbook-card span {
+  display: block;
+  color: var(--text-3);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cover-grid strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 17px;
+}
+
+.thesis-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: 18px;
+}
+
+.thesis-card,
+.need-card,
+.persona,
+.quote-card,
+.playbook-card,
+.sample-script,
+.creative-card,
+.roadmap-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px 24px;
+}
+
+.thesis-card.main {
+  grid-row: span 2;
+  border-top: 4px solid var(--accent);
+}
+
+.thesis-card h3,
+.motivation-main h3,
+.playbook-card h3,
+.roadmap-step h3 {
+  font-size: 26px;
+  line-height: 1.28;
+  margin: 0 0 12px;
+}
+
+.thesis-card p,
+.need-card p,
+.persona p,
+.quote-card p,
+.creative-card p,
+.roadmap-step p,
+.sample-script p,
+.playbook-card p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.need-map {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.need-card {
+  min-height: 240px;
+  border-top: 4px solid var(--accent);
+}
+
+.need-card:nth-child(2) { border-top-color: var(--accent-2); }
+.need-card:nth-child(3) { border-top-color: var(--accent-3); }
+.need-card:nth-child(4) { border-top-color: var(--good); }
+.need-card:nth-child(5) { border-top-color: var(--warn); }
+
+.need-card b,
+.creative-card b {
+  display: block;
+  color: var(--text-1);
+  font-size: 20px;
+  line-height: 1.28;
+  margin-bottom: 14px;
+}
+
+.motivation-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.motivation-main {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px;
+  border-left: 4px solid var(--accent);
+}
+
+.motivation-main p {
+  color: var(--text-2);
+  font-size: 19px;
+  line-height: 1.62;
+}
+
+.signal-list {
+  display: grid;
+  gap: 14px;
+}
+
+.signal-list div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+
+.signal-list strong {
+  display: block;
+  color: var(--text-1);
+  font-size: 18px;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.persona {
+  min-height: 295px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.persona-title {
+  color: var(--accent);
+  font-weight: 850;
+  font-size: 18px;
+}
+
+.persona b {
+  margin-top: auto;
+  color: var(--text-1);
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.quote-card {
+  min-height: 160px;
+  border-left: 4px solid var(--accent);
+}
+
+.quote-card:nth-child(2) { border-left-color: var(--accent-2); }
+.quote-card:nth-child(3) { border-left-color: var(--accent-3); }
+.quote-card:nth-child(4) { border-left-color: var(--good); }
+
+.quote-card.wide {
+  grid-column: span 4;
+  min-height: auto;
+  background: linear-gradient(90deg, var(--surface), color-mix(in srgb, var(--accent) 7%, var(--surface)));
+}
+
+.quote-card p {
+  color: var(--text-1);
+  font-size: 20px;
+  line-height: 1.45;
+  font-weight: 640;
+}
+
+.strategy-table {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr 1.55fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.strategy-table div {
+  padding: 15px 18px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+.strategy-table div:nth-child(4n) {
+  border-right: 0;
+}
+
+.strategy-table div:nth-last-child(-n+4) {
+  border-bottom: 0;
+}
+
+.strategy-table .table-head {
+  background: var(--text-1);
+  color: var(--surface);
+  font-weight: 800;
+}
+
+.playbook-layout {
+  display: grid;
+  grid-template-columns: .85fr 1.1fr;
+  gap: 18px;
+}
+
+.playbook-card.strong {
+  border-top: 4px solid var(--accent);
+}
+
+.sample-script {
+  grid-column: span 2;
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--border));
+}
+
+.sample-script b {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.sample-script p {
+  color: var(--text-1);
+  font-size: 20px;
+  line-height: 1.58;
+}
+
+.creative-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.creative-card {
+  min-height: 180px;
+}
+
+.creative-card:nth-child(1),
+.creative-card:nth-child(4) {
+  border-top: 4px solid var(--accent);
+}
+
+.creative-card:nth-child(2),
+.creative-card:nth-child(5) {
+  border-top: 4px solid var(--accent-2);
+}
+
+.creative-card:nth-child(3),
+.creative-card:nth-child(6) {
+  border-top: 4px solid var(--accent-3);
+}
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.roadmap-step {
+  min-height: 245px;
+  border-top: 4px solid var(--accent);
+}
+
+.roadmap-step:nth-child(2) { border-top-color: var(--accent-2); }
+.roadmap-step:nth-child(3) { border-top-color: var(--accent-3); }
+
+.priority-box {
+  padding: 18px 22px;
+  color: var(--text-1);
+  font-size: 20px;
+  max-width: 980px;
+}
+
+.final-wrap {
+  max-width: 1050px;
+}
+
+.final-wrap .h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-wrap .lede {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.final-grid div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.final-grid b,
+.final-grid span {
+  display: block;
+}
+
+.final-grid b {
+  color: var(--text-1);
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.final-grid span {
+  color: var(--text-2);
+}
+
+.deck-footer {
+  left: 40px;
+  right: 40px;
+  bottom: 22px;
+  color: var(--text-3);
+}
+
+@media (max-width: 900px) {
+  .tpl-audience-report .slide {
+    padding: 44px 26px;
+  }
+  .tpl-audience-report .h1 {
+    font-size: 42px;
+  }
+  .tpl-audience-report .h2 {
+    font-size: 32px;
+  }
+  .cover-grid,
+  .thesis-grid,
+  .need-map,
+  .motivation-layout,
+  .persona-grid,
+  .voice-grid,
+  .creative-grid,
+  .roadmap,
+  .final-grid,
+  .playbook-layout {
+    grid-template-columns: 1fr;
+  }
+  .quote-card.wide,
+  .sample-script {
+    grid-column: span 1;
+  }
+  .strategy-table {
+    grid-template-columns: 1fr;
+  }
+  .strategy-table div,
+  .strategy-table div:nth-child(4n),
+  .strategy-table div:nth-last-child(-n+4) {
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+}
