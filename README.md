@@ -10,6 +10,10 @@
 
 ## 開啟方式
 
+線上可視化連結：
+
+https://renewclincdaniel-coder.github.io/chat_histories_TA/
+
 直接開啟 `index.html` 即可瀏覽簡報。
 
 鍵盤操作：
